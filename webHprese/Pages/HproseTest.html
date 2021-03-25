@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../wwwroot/js/hprose.js"></script>
+    <!-- <script src="JSONRPCClientFilter.js"></script> -->
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#btn').click(function () {
+                // var client = hprose.Client.create("http://localhost:10240/", ['Print']);
+                // client.GetVersion("果果喜欢和李嘉诚",function (result) {
+                //     alert(result);
+                // });
+
+                var client = hprose.Client.create("http://localhost:10240/", ['GetVersion']);
+                client.GetVersion(function (result) {
+                    alert(result);
+                });
+
+                // var jsonValue = { Name: "", Version: "" }
+                // jsonValue.Name="李嘉诚";
+                // jsonValue.Version="v9527.3.0";
+                // var client = hprose.Client.create("http://localhost:10240/", ['SetVersion']);
+                // client.SetVersion(jsonValue,function (result) {
+                //     alert(result);
+                // });
+
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <input type="button" value="提交" id="btn">
+    </div>
+
+</body>
+</html>
