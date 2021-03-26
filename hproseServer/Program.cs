@@ -13,6 +13,8 @@ namespace hproseServer
         static void Main(string[] args)
         {
             
+
+
             Console.WriteLine("--------欢迎来到hprose玩耍--------");
             var server = new HttpListener();
             server.Prefixes.Add("http://localhost:10240/");
