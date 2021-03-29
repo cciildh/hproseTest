@@ -194,9 +194,11 @@ namespace RedCardCor
             this.Controls.Add(this.btnRedCard);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCitiid);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Text = "身份证读卡功能";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
