@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testMairaBD", "testMairaBD\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHproseClient", "WebHproseClient\WebHproseClient.csproj", "{A4DCC417-F0F8-4C6E-8DD7-7E529C4487AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asyncTest", "asyncTest\asyncTest.csproj", "{92741D94-7C22-415C-BC46-CB0CFE34C7EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "asyncTest", "asyncTest\asyncTest.csproj", "{92741D94-7C22-415C-BC46-CB0CFE34C7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedCardCor", "RedCardCor\RedCardCor.csproj", "{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{92741D94-7C22-415C-BC46-CB0CFE34C7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92741D94-7C22-415C-BC46-CB0CFE34C7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92741D94-7C22-415C-BC46-CB0CFE34C7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
