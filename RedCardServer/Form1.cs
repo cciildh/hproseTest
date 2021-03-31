@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RedCardCor
+namespace RedCardServer
 {
     public partial class Form1 : Form
     {
@@ -17,10 +17,36 @@ namespace RedCardCor
         {
             InitializeComponent();
         }
+        int state;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            notifyIcon.DoubleClick += NotifyIcon_DoubleClick;
+            this.WindowState = FormWindowState.Minimized;
+            int x = SystemInformation.PrimaryMonitorSize.Width - this.Width;
+            int y = SystemInformation.PrimaryMonitorSize.Height - this.Height;//要让窗体往上走 只需改变 Y的坐标
+            this.Location = new Point(0, 0);
+            this.TopMost = true;
+        }
+        private void NotifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            //判断是否已经最小化于托盘 
+            if (WindowState == FormWindowState.Minimized)
+            {
+                //还原窗体显示 
+                WindowState = FormWindowState.Normal;
+                //激活窗体并给予它焦点 
+                this.Activate();
+                //任务栏区显示图标 
+                this.ShowInTaskbar = true;
+                //托盘区图标隐藏 
+                notifyIcon.Visible = false;
+            }
+        }
+
 
         private void btnRedCard_Click(object sender, EventArgs e)
         {
-           var result=  RedCardCITIID.ReadCard();
+            var result = RedCardCITIID.ReadCard();
 
             this.txtAddress.Text = result.Address;
             this.txtBithday.Text = result.Birthday;
@@ -55,36 +81,9 @@ namespace RedCardCor
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void txtName_MouseClick(object sender, MouseEventArgs e)
         {
-            notifyIcon.DoubleClick += NotifyIcon_DoubleClick;   
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void NotifyIcon_DoubleClick(object sender, EventArgs e)
-        {
-            //判断是否已经最小化于托盘 
-            if (WindowState == FormWindowState.Minimized)
-            {
-                //还原窗体显示 
-                WindowState = FormWindowState.Normal;
-                //激活窗体并给予它焦点 
-                this.Activate();
-                //任务栏区显示图标 
-                this.ShowInTaskbar = true;
-                //托盘区图标隐藏 
-                notifyIcon.Visible = false;
-            }
-        }
-
-        private void txtAddress_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtAddress.SelectAll();
-        }
-
-        private void txtBithday_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtBithday.SelectAll();
+            this.txtName.SelectAll();
         }
 
         private void txtCitiid_MouseClick(object sender, MouseEventArgs e)
@@ -92,9 +91,14 @@ namespace RedCardCor
             txtCitiid.SelectAll();
         }
 
-        private void txtName_MouseClick(object sender, MouseEventArgs e)
+        private void txtBithday_MouseClick(object sender, MouseEventArgs e)
         {
-            txtName.SelectAll();
+            txtBithday.SelectAll();
+        }
+
+        private void txtAddress_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtAddress.SelectAll();
         }
     }
 }

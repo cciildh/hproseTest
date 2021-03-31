@@ -71,8 +71,10 @@ namespace RedCardCor
             this.txtName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(171, 23);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(250, 32);
             this.txtName.TabIndex = 2;
+            this.txtName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtName_MouseClick);
             // 
             // label2
             // 
@@ -89,16 +91,20 @@ namespace RedCardCor
             this.txtCitiid.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCitiid.Location = new System.Drawing.Point(171, 65);
             this.txtCitiid.Name = "txtCitiid";
+            this.txtCitiid.ReadOnly = true;
             this.txtCitiid.Size = new System.Drawing.Size(250, 32);
             this.txtCitiid.TabIndex = 2;
+            this.txtCitiid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCitiid_MouseClick);
             // 
             // txtBithday
             // 
             this.txtBithday.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBithday.Location = new System.Drawing.Point(171, 110);
             this.txtBithday.Name = "txtBithday";
+            this.txtBithday.ReadOnly = true;
             this.txtBithday.Size = new System.Drawing.Size(250, 32);
             this.txtBithday.TabIndex = 2;
+            this.txtBithday.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBithday_MouseClick);
             // 
             // label3
             // 
@@ -125,8 +131,10 @@ namespace RedCardCor
             this.txtAddress.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddress.Location = new System.Drawing.Point(171, 157);
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(250, 32);
             this.txtAddress.TabIndex = 2;
+            this.txtAddress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAddress_MouseClick);
             // 
             // label5
             // 

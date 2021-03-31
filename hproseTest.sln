@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHproseClient", "WebHpros
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "asyncTest", "asyncTest\asyncTest.csproj", "{92741D94-7C22-415C-BC46-CB0CFE34C7EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedCardCor", "RedCardCor\RedCardCor.csproj", "{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedCardCor", "RedCardCor\RedCardCor.csproj", "{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedCardServer", "RedCardServer\RedCardServer.csproj", "{BEF9455E-91CC-4E4C-8AAB-C476FC45B373}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E8529A1-7C5E-46F0-94C2-3DA7FEA4A772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF9455E-91CC-4E4C-8AAB-C476FC45B373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF9455E-91CC-4E4C-8AAB-C476FC45B373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF9455E-91CC-4E4C-8AAB-C476FC45B373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF9455E-91CC-4E4C-8AAB-C476FC45B373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
