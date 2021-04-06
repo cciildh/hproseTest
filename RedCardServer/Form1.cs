@@ -21,7 +21,7 @@ namespace RedCardServer
         private void Form1_Load(object sender, EventArgs e)
         {
             notifyIcon.DoubleClick += NotifyIcon_DoubleClick;
-            this.WindowState = FormWindowState.Minimized;
+            //this.WindowState = FormWindowState.Minimized;
             int x = SystemInformation.PrimaryMonitorSize.Width - this.Width;
             int y = SystemInformation.PrimaryMonitorSize.Height - this.Height;//要让窗体往上走 只需改变 Y的坐标
             this.Location = new Point(0, 0);
