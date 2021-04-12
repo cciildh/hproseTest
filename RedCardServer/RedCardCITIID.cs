@@ -73,17 +73,17 @@ namespace RedCardServer
                 {
                     if (iReaderIDCard_CS(ref pintptr, info, new byte[14100], new byte[512]) == 0)
                     {
-                        //安装codepages包转码为gb2312
+                        //安装codepages包转码为gb2312 core需要转码
                         //System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-                        //var x = System.Text.Encoding.Default.GetString(info).Split("|");
-                        var x = System.Text.Encoding.Default.GetString(info).Split('|');
+                       // var x = System.Text.Encoding.GetEncoding("GB2312").GetString(info).Split("|");
+                        var read = System.Text.Encoding.Default.GetString(info).Split('|');
                         cardinfo.CardID = "";
-                        cardinfo.CitiID = x[5];
-                        cardinfo.CardName = x[0];
-                        cardinfo.CardSex = x[1];
-                        cardinfo.Nation = x[2];
-                        cardinfo.Birthday = x[3].Substring(0, 4) + "-" + x[3].Substring(4, 2) + "-" + x[3].Substring(6, 2);
-                        cardinfo.Address = x[4];
+                        cardinfo.CitiID = read[5];
+                        cardinfo.CardName = read[0];
+                        cardinfo.CardSex = read[1];
+                        cardinfo.Nation = read[2];
+                        cardinfo.Birthday = read[3].Substring(0, 4) + "-" + read[3].Substring(4, 2) + "-" + read[3].Substring(6, 2);
+                        cardinfo.Address = read[4];
                     }
                 }
             }
@@ -111,15 +111,16 @@ namespace RedCardServer
             {
                 if (CardInit() == true)
                 {
+                    var rel = iReadSicard_CS(17, info, msg);
                     if (iReadSicard_CS(17, info, msg) == 0)
                     {
-                        var x = Encoding.Default.GetString(info).Split((char)(0))[0].Split('|');
-                        result[0] = x[0];
-                        result[1] = x[1];
-                        result[2] = x[2];
-                        result[3] = x[3];
-                        result[4] = x[4];
-                        result[5] = x[5].Substring(0, 4);
+                        var read = Encoding.Default.GetString(info).Split((char)(0))[0].Split('|');
+                        result[0] = read[0];
+                        result[1] = read[1];
+                        result[2] = read[2];
+                        result[3] = read[3];
+                        result[4] = read[4];
+                        result[5] = read[5].Substring(0, 4);
                         //result(5) = Left(x(5), 4) & "-" & Mid(x(5), 5, 2) & "-" & Mid(x(5), 7)
                     }
                 }

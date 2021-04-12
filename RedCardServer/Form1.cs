@@ -54,6 +54,10 @@ namespace RedCardServer
             this.txtName.Text = result.CardName;
             this.txtNation.Text = result.Nation;
             this.txtSexName.Text = result.CardSex;
+
+            var result1 = RedCardCITIID.InsurCitiid();
+
+            MessageBox.Show(result1.ToString());
         }
 
         private void btnCler_Click(object sender, EventArgs e)
