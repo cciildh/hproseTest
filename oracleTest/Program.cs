@@ -35,6 +35,7 @@ namespace oracleTest
             }
             catch (Exception)
             {
+                //回滚事务
                 oracle.Close(false);
                 throw;
             }
