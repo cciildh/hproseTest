@@ -9,12 +9,7 @@ namespace oracleTest
         {
             Console.WriteLine("Hello World!");
 
-            ////打开事务
-            //OracleDataBse oracle = new OracleDataBse(true);
-            ////执行sql
-            //oracle.RunSQL("insert into pa_info .....");
-            ////提交事务
-            //oracle.Close(true);
+           
 
             //查询不需要开事务
             OracleDataBse oracle1 = new OracleDataBse();
@@ -25,6 +20,25 @@ namespace oracleTest
 
             Console.ReadLine();
 
+        }
+
+        public void  insert()
+        {
+            //打开事务
+            OracleDataBse oracle = new OracleDataBse(true);
+            try
+            {
+                //执行sql
+                oracle.RunSQL("insert into pa_info .....");
+                //提交事务
+                oracle.Close(true);
+            }
+            catch (Exception)
+            {
+                oracle.Close(false);
+                throw;
+            }
+           
         }
     }
 }
