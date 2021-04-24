@@ -30,6 +30,9 @@ namespace oracleTest
             {
                 //执行sql
                 oracle.RunSQL("insert into pa_info .....");
+
+                oracle.RunSQL("insert into pa_account .....");
+
                 //提交事务
                 oracle.Close(true);
             }
