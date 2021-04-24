@@ -43,6 +43,14 @@ namespace RedCardServer
             this.txtNation = new System.Windows.Forms.TextBox();
             this.btnRedCard = new System.Windows.Forms.Button();
             this.btnCler = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCliID = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPatiid = new System.Windows.Forms.TextBox();
+            this.btnCli = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -183,11 +191,95 @@ namespace RedCardServer
             this.btnCler.UseVisualStyleBackColor = true;
             this.btnCler.Click += new System.EventHandler(this.btnCler_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(402, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 19);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "就诊卡号：";
+            // 
+            // txtCliID
+            // 
+            this.txtCliID.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCliID.Location = new System.Drawing.Point(503, 33);
+            this.txtCliID.Name = "txtCliID";
+            this.txtCliID.Size = new System.Drawing.Size(245, 29);
+            this.txtCliID.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(402, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 19);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "人员编码：";
+            // 
+            // txtPatiid
+            // 
+            this.txtPatiid.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPatiid.Location = new System.Drawing.Point(503, 81);
+            this.txtPatiid.Name = "txtPatiid";
+            this.txtPatiid.Size = new System.Drawing.Size(245, 29);
+            this.txtPatiid.TabIndex = 1;
+            // 
+            // btnCli
+            // 
+            this.btnCli.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCli.Location = new System.Drawing.Point(485, 154);
+            this.btnCli.Name = "btnCli";
+            this.btnCli.Size = new System.Drawing.Size(75, 29);
+            this.btnCli.TabIndex = 2;
+            this.btnCli.Text = "读卡";
+            this.btnCli.UseVisualStyleBackColor = true;
+            this.btnCli.Click += new System.EventHandler(this.btnCli_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(591, 154);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 29);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "清屏";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btSave
+            // 
+            this.btSave.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btSave.Location = new System.Drawing.Point(695, 154);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(75, 29);
+            this.btSave.TabIndex = 2;
+            this.btSave.Text = "写卡";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(533, 230);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 29);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "就诊卡还原";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 450);
+            this.ClientSize = new System.Drawing.Size(884, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCli);
             this.Controls.Add(this.btnCler);
             this.Controls.Add(this.btnRedCard);
             this.Controls.Add(this.txtNation);
@@ -200,6 +292,10 @@ namespace RedCardServer
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCitiid);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPatiid);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtCliID);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -229,6 +325,14 @@ namespace RedCardServer
         private System.Windows.Forms.TextBox txtNation;
         private System.Windows.Forms.Button btnRedCard;
         private System.Windows.Forms.Button btnCler;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCliID;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPatiid;
+        private System.Windows.Forms.Button btnCli;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.Button button1;
     }
 }
 

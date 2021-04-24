@@ -26,6 +26,10 @@ namespace RedCardServer
             int y = SystemInformation.PrimaryMonitorSize.Height - this.Height;//要让窗体往上走 只需改变 Y的坐标
             this.Location = new Point(0, 0);
             this.TopMost = true;
+
+            this.txtCliID.Text = "0009527";
+            this.txtPatiid.Text = "8004187171365370555";
+
         }
         private void NotifyIcon_DoubleClick(object sender, EventArgs e)
         {
@@ -103,6 +107,57 @@ namespace RedCardServer
         private void txtAddress_MouseClick(object sender, MouseEventArgs e)
         {
             txtAddress.SelectAll();
+        }
+
+        private void btnCli_Click(object sender, EventArgs e)
+        {
+            var cliniccardid = "";
+            var patiid = "";
+            try
+            {
+                MedicCardDriver.RedCard(out cliniccardid, out patiid);
+
+                this.txtCliID.Text = cliniccardid;
+                this.txtPatiid.Text = patiid;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+         
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.txtCliID.Text = "";
+            this.txtPatiid.Text = "";
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MedicCardDriver.WriteCard(this.txtCliID.Text, txtPatiid.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                if (MedicCardDriver.CardRestore())
+                    MessageBox.Show("就诊卡还原成功");
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

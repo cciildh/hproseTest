@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
@@ -31,7 +32,13 @@ namespace asyncTest
 
             Console.WriteLine(newStr);
 
+    //Console.WriteLine(CardTypeKeys().)
+
+
             Console.ReadLine();
         }
-    }
+
+       
+
+}
 }
