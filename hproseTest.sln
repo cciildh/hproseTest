@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedCardServer", "RedCardSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oracleTest", "oracleTest\oracleTest.csproj", "{C0FE8737-BCFD-4C6F-AC7D-3CE8942B0CCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tetsPost", "tetsPost\tetsPost.csproj", "{AF2CD95C-6A5D-448D-B380-591AB1A46645}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,14 @@ Global
 		{C0FE8737-BCFD-4C6F-AC7D-3CE8942B0CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0FE8737-BCFD-4C6F-AC7D-3CE8942B0CCB}.Release|x86.ActiveCfg = Release|Any CPU
 		{C0FE8737-BCFD-4C6F-AC7D-3CE8942B0CCB}.Release|x86.Build.0 = Release|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF2CD95C-6A5D-448D-B380-591AB1A46645}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

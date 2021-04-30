@@ -19,7 +19,7 @@ namespace hproseServer
             var server = new HttpListener();
             server.Prefixes.Add("http://localhost:10240/");
             server.Start();
-            var service = new Service().Bind(server).AddInstanceMethods(new Hello());
+            var service = new Service().Bind(server).AddInstanceMethods(new Hello()).AddInstanceMethods(new Hello1());
 
             System.Console.WriteLine("Server listening at http://localhost:10240/ n Press any key exit ...");
             Console.ReadLine();
@@ -27,6 +27,13 @@ namespace hproseServer
         }
 
 
+    }
+    public class Hello1
+    {
+        public string GetNmae()
+        {
+            return "李嘉诚";
+        }
     }
 
     public class Hello : IHello
