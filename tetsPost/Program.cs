@@ -15,9 +15,9 @@ namespace tetsPost
             Console.WriteLine("Hello World!");
             //  PostData("http://192.168.11.254/webAPI/YuanTuApi/QueryPatient", testData.New("009999206209414171274"));
             //var aa=  GetData("http://192.168.8.241:21000/getServerDate");
-            var date = GetServerDate();
-            Console.WriteLine(date);
-            Console.WriteLine($@"时间格式化{ date.ToString("yyyyMMddHHmmss").Trim()}");
+            //var date = GetServerDate();
+            //Console.WriteLine(date);
+            //Console.WriteLine($@"时间格式化{ date.ToString("yyyyMMddHHmmss").Trim()}");
 
             //var dd = HttpPostClient("http://192.168.11.254/webAPI/YuanTuApi/QueryPatient", testData.New("8004187171365370555"));
             //Console.WriteLine(dd);
@@ -31,6 +31,13 @@ namespace tetsPost
             Console.WriteLine("-------StrGetValue-------");
 
             Console.WriteLine(PubLib.StrGetValue("abad", "a"));
+
+            Console.WriteLine("---------json对象---------");
+
+            Console.WriteLine(JsonConvert.SerializeObject(  new JObject { { "aaaa", 55 } }));
+            string[] aa = { "kkkkkk"};
+            
+            Console.WriteLine("'"+string.Join("','", aa)+"'");
 
 
             Console.ReadLine();

@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="rdlcPrint.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BillPrinter1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EPSON TM-T81 ReceiptSC4</Value>
+    </Setting>
+    <Setting Name="LogUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://log.xyhosp.cn/gelf</Value>
+    </Setting>
+    <Setting Name="RecipePrinter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Epson LQ-1600K</Value>
+    </Setting>
+    <Setting Name="BillPrinter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EPSON TM-T81 ReceiptSC4</Value>
+    </Setting>
+    <Setting Name="URL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:30000/</Value>
+    </Setting>
+    <Setting Name="WebApiUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.8.241:21000/</Value>
+    </Setting>
+    <Setting Name="HisWebApiUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.8.241:21000/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
