@@ -34,7 +34,9 @@ namespace hproseServer
         {
             return "李嘉诚";
         }
-    }
+
+        
+    } 
 
     public class Hello : IHello
     {
