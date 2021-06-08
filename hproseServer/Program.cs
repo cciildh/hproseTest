@@ -30,12 +30,17 @@ namespace hproseServer
     }
     public class Hello1
     {
-        public string GetNmae()
+        public string Name { get; set; }
+        public string SetNmae(string name)
         {
-            return "李嘉诚";
+            this.Name = name;
+            return name;
+        }
+        public string GetNmae()
+        { 
+            return Name;
         }
 
-        
     } 
 
     public class Hello : IHello

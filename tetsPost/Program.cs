@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
@@ -34,10 +35,14 @@ namespace tetsPost
 
             Console.WriteLine("---------json对象---------");
 
-            Console.WriteLine(JsonConvert.SerializeObject(  new JObject { { "aaaa", 55 } }));
-            string[] aa = { "kkkkkk"};
-            
-            Console.WriteLine("'"+string.Join("','", aa)+"'");
+            //Console.WriteLine(JsonConvert.SerializeObject(  new JObject { { "aaaa", 55 } }));
+            //string[] aa = { "kkkkkk"};
+            List<string> aa = new List<string>();
+            for (int i = 0; i < 5; i++)
+            {
+                aa.Add("李嘉诚"+i);
+            }
+            Console.WriteLine("'"+string.Join("','", aa.ToArray())+"'");
 
 
             Console.ReadLine();
