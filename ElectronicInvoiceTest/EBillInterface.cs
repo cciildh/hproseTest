@@ -14,13 +14,35 @@ namespace ElectronicInvoiceTest
         private const string AppID = "171861E611787172B3203DE8EB55EFF4";
         private const string Appkey = "1FE5FB38958EF621B1BC3FB2CF43FF5E";
         private const string Empty2MD5 = "D41D8CD98F00B204E9800998ECF8427E";
-        private const string ApiContentType = "application/json;charset=UTF-8";
-        private string Signature;
-        public string RequestBody { private get; set; }
-        public string RequestNonce { private get; set; }
-        public string RequestTimestamp { private get; set; }
-        public string MethodName { get; set; }
 
+        private const string ApiContentType = "application/json;charset=UTF-8";
+        /// <summary>
+        /// MD5加密后的串
+        /// </summary>
+        private string Signature;
+        /// <summary>
+        /// 调用接口参数（json）
+        /// </summary>
+        public string RequestBody { private get; set; }
+        /// <summary>
+        /// 随机字符串(随机数)
+        /// </summary>
+        public string RequestNonce { private get; set; }
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        public string RequestTimestamp { private get; set; }
+        /// <summary>
+        /// 接口方法
+        /// </summary>
+        public string MethodName { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="methodName">接口方法</param>
+        /// <param name="requestBody">调用接口参数（json）</param>
+        /// <param name="requestNonce">随机字符串</param>
+        /// <param name="requestTimestamp">时间戳</param>
         public EBillInterface(string methodName, string requestBody, string requestNonce, string requestTimestamp)
         {
             RequestBody = requestBody;

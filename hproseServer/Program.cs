@@ -9,93 +9,63 @@ namespace hproseServer
 {
     class Program
     {
-      
+
         static void Main(string[] args)
         {
-            
+
 
 
             Console.WriteLine("--------欢迎来到hprose玩耍--------");
+            Hprose.IO.TypeManager.Register<Person>("Person");//注册对象
+
             var server = new HttpListener();
             server.Prefixes.Add("http://localhost:10240/");
             server.Start();
-            var service = new Service().Bind(server).AddInstanceMethods(new Hello()).AddInstanceMethods(new Hello1());
-
+            var service = new Service().Bind(server);
+            service.AddInstanceMethods(new ServiceInfo());
+            //service.AddInstanceMethods(new ServiceInfo1());//添加第二个服务
             System.Console.WriteLine("Server listening at http://localhost:10240/ n Press any key exit ...");
             Console.ReadLine();
             server.Stop();
         }
 
 
-    }
-    public class Hello1
-    {
-        public string Name { get; set; }
-        public string SetNmae(string name)
-        {
-            this.Name = name;
-            return name;
-        }
-        public string GetNmae()
-        { 
-            return Name;
-        }
-
-    } 
-
-    public class Hello : IHello
-    {
-        public string GetVersion()
-        {
-            var result = new ServiceVersion("果果", "v0.2.2.2");
-
-            Console.WriteLine("server Version: {0} - v{1}", result.Name, result.Version);
-            return Newtonsoft.Json.JsonConvert.SerializeObject( result); 
-        }
 
         public string Print(string name)
         {
             return $"果果跟小棒子搞基在Hello { name} !";
         }
-
-        public List<string> SayHello(string name)
-        {
-            return new List<string>()
-            {
-                $"欢迎{name}到此一游！",
-                $"小胖子约{name}搞基"
-            };
-        }
-
-        public string SetVersion(ServiceVersion version)
-        {
-            return ResultJson.RespsonseOk(version);
-        }
     }
 
-    public class ServiceVersion
+    public class ServiceInfo
     {
-        public object Name { get; set; }
-        public object Version { get; set; }
-
-        public ServiceVersion() { }
-
-        public ServiceVersion(object name, object ver)
+        public Person getInfo()
         {
-            Name = name;
-            Version = ver;
+            var result = new Person();
+            result.id = "9527";
+            result.name = "李嘉诚";
+            result.age = 16;
+            result.Addres = "未成年";
+            return result;
+        }
+
+        public void setInfo(Person person)
+        {
+            System.Console.WriteLine("......setinfo........");
+            System.Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(person));
         }
     }
 
-    // 服务接口
-    public interface IHello
+    public class Person
     {
-        string Print(string name);
-        string GetVersion();
+        public string id { get; set; }
+        public string name { get; set; }
+        public int age { get; set; }
+        public string Addres { get; set; }
 
-        string SetVersion(ServiceVersion version);
-        List<string> SayHello(string name);
     }
+
+
 
 
 }

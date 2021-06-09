@@ -11,32 +11,30 @@ namespace hproseClient
     {
         static void Main()
         {
+            Hprose.IO.TypeManager.Register<Person>("Person");//注册对象
+
             Client cli = new Client("http://localhost:10240/");
-            IHello hello = cli.UseService<IHello>();
+            var result = cli.Invoke<Person>("getInfo", new object[] { });
+            System.Console.WriteLine("--------person对象接收---------");
+            System.Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(result));
 
-            var ver = hello.GetVersion().ToString();
-            //System.Console.WriteLine("Remote Service Version: {0} - v{1}", ver.name, ver.version);
-            var hellop = hello.Print("李嘉城");
-            Console.WriteLine(hellop);
-            var hellos = hello.SayHello("果果");
-
-            foreach (string item in hellos)
-            {
-                System.Console.WriteLine(item);
-            }
+            result.Addres = "湖北广水";
+            System.Console.WriteLine("--------传递person对象---------");
+            cli.Invoke("setInfo", new object[] { result });
 
             System.Console.ReadKey();
+
+
         }
     }
-    public class ServiceVersion
+
+
+    public class Person
     {
+        public string id { get; set; }
         public string name { get; set; }
-        public string version { get; set; }
+        public int age { get; set; }
+        public string Addres { get; set; }
     }
-    public interface IHello
-    {
-        string Print(string name);
-        string GetVersion();
-        List<string> SayHello(string name);
-    }
+
 }
