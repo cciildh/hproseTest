@@ -59,7 +59,7 @@ namespace ElectronicInvoiceTest
         private void button4_Click(object sender, EventArgs e)
         {
             inputBillInfo billInfo = new inputBillInfo();
-            billInfo.serialNumber = "0000000007";
+            billInfo.serialNumber = "0000000001";
             billInfo.theType = "1";
             billInfo.totalAmount = 100;
             billInfo.recName = "信阳市第一人民医院";
@@ -95,11 +95,11 @@ namespace ElectronicInvoiceTest
             fee2.itemQuantity = 1;
             fee2.itemStd = 0;
             fee2.itemUnit = "元";
-            fee2.itemAmount = 50;
+            fee2.itemAmount = 35;
             fee2.itemRemark = string.Empty;
 
             billInfo.items.Add(fee1);
-            billInfo.items.Add(fee1);
+            billInfo.items.Add(fee2);
             JavaScriptSerializer js = new JavaScriptSerializer();
             EBillInterface a = new EBillInterface("invoice", js.Serialize(billInfo).Replace(":null", ":\"\""), "abcd1", GetTimeStamp());
 
@@ -110,7 +110,7 @@ namespace ElectronicInvoiceTest
         private void button5_Click(object sender, EventArgs e)
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
-            EBillInterface a = new EBillInterface("cancellation", "{\"eInvoiceCode\":\"41060121\",\"eInvoiceNumber\":\"0004596303\",\"reason\":\"测试冲红\" }", "abcd", GetTimeStamp());
+            EBillInterface a = new EBillInterface("cancellation", "{\"eInvoiceCode\":\"41060121\",\"eInvoiceNumber\":\"5305032105\",\"reason\":\"测试冲红\" }", "abcd", GetTimeStamp());
 
             string x = a.Trade();
             ResponsesModel di = js.Deserialize<ResponsesModel>(x);
@@ -122,8 +122,8 @@ namespace ElectronicInvoiceTest
         /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
-            JavaScriptSerializer js = new JavaScriptSerializer();  // 0004596301
-            EBillInterface a = new EBillInterface("invoiceResult", "{\"eInvoiceCode\":\"41060121\",\"eInvoiceNumber\":\"0004596308\"}", "abcd", GetTimeStamp());
+            JavaScriptSerializer js = new JavaScriptSerializer();  // 5305032105 
+            EBillInterface a = new EBillInterface("invoiceResult", "{\"eInvoiceCode\":\"41060121\",\"eInvoiceNumber\":\"5305032105\"}", "abcd", GetTimeStamp());
 
             string x = a.Trade();
             ResponsesModel di = js.Deserialize<ResponsesModel>(x);

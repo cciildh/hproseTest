@@ -10,11 +10,17 @@ namespace ElectronicInvoiceTest
 {
     public class EBillInterface
     {
-        private const string Url = "http://218.29.120.86:8321/api/hospital/";
-        private const string AppID = "171861E611787172B3203DE8EB55EFF4";
-        private const string Appkey = "1FE5FB38958EF621B1BC3FB2CF43FF5E";
-        private const string Empty2MD5 = "D41D8CD98F00B204E9800998ECF8427E";
+        //private const string Url = "http://218.29.120.86:8321/api/hospital/";
+        //private const string AppID = "171861E611787172B3203DE8EB55EFF4";
+        //private const string Appkey = "1FE5FB38958EF621B1BC3FB2CF43FF5E";
+        //private const string Empty2MD5 = "D41D8CD98F00B204E9800998ECF8427E";
 
+        //private const string ApiContentType = "application/json;charset=UTF-8";
+        //正式
+        private const string Url = "http://192.168.200.105:8321/api/hospital/";
+        private const string AppID = "70A1647256B59D1E4407908326A3B99E"; //分配的appid
+        private const string Appkey = "E9B75CC60A395A611FD54FC20DA4B99C";
+        private const string Empty2MD5 = "D41D8CD98F00B204E9800998ECF8427E";
         private const string ApiContentType = "application/json;charset=UTF-8";
         /// <summary>
         /// MD5加密后的串

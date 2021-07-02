@@ -1,16 +1,67 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 
 namespace tetsPost
 {
     class Program
     {
+        class Version
+        {
+            //[System.ComponentModel.DefaultValue("")]
+            //[JsonProperty(DefaultValueHandling = DefaultValueHandling.Populate)]
+            public string name { get; set; }
+            public int age { get; set; }
+            public string sex { get; set; }
+        }
+
+        #region josn null 转""
+        public class NullToEmptyStringResolver : Newtonsoft.Json.Serialization.DefaultContractResolver
+        {
+            protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+            {
+                return type.GetProperties()
+                        .Select(p =>
+                        {
+                            var jp = base.CreateProperty(p, memberSerialization);
+                            jp.ValueProvider = new NullToEmptyStringValueProvider(p); return jp;
+                        }).ToList();
+            }
+        }
+        public class NullToEmptyStringValueProvider : IValueProvider
+        {
+            PropertyInfo _MemberInfo; public NullToEmptyStringValueProvider(PropertyInfo memberInfo)
+            {
+                _MemberInfo = memberInfo;
+            }
+            public object GetValue(object target)
+            {
+                object result = _MemberInfo.GetValue(target); if (_MemberInfo.PropertyType == typeof(string) && result == null) result = ""; return result;
+
+            }
+            public void SetValue(object target, object value)
+            {
+                _MemberInfo.SetValue(target, value);
+            }
+        }
+
+
+        //var jsonSetting = new JsonSerializerSettings() { ContractResolver = new NullToEmptyStringResolver() };
+
+        //var ver = new Version();
+        //ver.name = "123456";
+        //    var json = JsonConvert.SerializeObject(ver, jsonSetting);
+
+
+        #endregion
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -23,31 +74,49 @@ namespace tetsPost
             //var dd = HttpPostClient("http://192.168.11.254/webAPI/YuanTuApi/QueryPatient", testData.New("8004187171365370555"));
             //Console.WriteLine(dd);
             //随机函数测试
-            Console.WriteLine(new Random().Next(10000) + 1);
+            //Console.WriteLine(new Random().Next(10000) + 1);
 
-            Console.WriteLine("----------Ascii码进位-----------");
+            //Console.WriteLine("----------Ascii码进位-----------");
 
-            Console.WriteLine(PubLib.StrGetNextID("adbcZ",1));
+            //Console.WriteLine(PubLib.StrGetNextID("adbcZ",1));
 
-            Console.WriteLine("-------StrGetValue-------");
+            //Console.WriteLine("-------StrGetValue-------");
 
-            Console.WriteLine(PubLib.StrGetValue("abad", "a"));
+            //Console.WriteLine(PubLib.StrGetValue("abad", "a"));
 
-            Console.WriteLine("---------json对象---------");
+            //Console.WriteLine("---------json对象---------");
 
-            //Console.WriteLine(JsonConvert.SerializeObject(  new JObject { { "aaaa", 55 } }));
-            //string[] aa = { "kkkkkk"};
-            List<string> aa = new List<string>();
-            for (int i = 0; i < 5; i++)
-            {
-                aa.Add("李嘉诚"+i);
-            }
-            Console.WriteLine("'"+string.Join("','", aa.ToArray())+"'");
 
+
+            ////Console.WriteLine(JsonConvert.SerializeObject(  new JObject { { "aaaa", 55 } }));
+            ////string[] aa = { "kkkkkk"};
+            //List<string> aa = new List<string>();
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    aa.Add("李嘉诚"+i);
+            //}
+            //Console.WriteLine("'"+string.Join("','", aa.ToArray())+"'");
+
+
+            ////---------测试时间转换
+            //Console.WriteLine("20210622170911");
+            //var date = Convert.ToDateTime("20210622170911");
+            //Console.WriteLine(date.ToString());
+
+
+            var jsonSetting = new JsonSerializerSettings() { ContractResolver = new NullToEmptyStringResolver() };
+
+            var ver = new Version();
+            ver.name = "123456";
+            var json = JsonConvert.SerializeObject(ver, jsonSetting);
+            Console.WriteLine(json);
+            var data = JsonConvert.DeserializeObject<Version>(json);
+
+            Console.WriteLine(JsonConvert.SerializeObject(data));
 
             Console.ReadLine();
         }
-       
+
 
         #region "httpWebRequest(GET,POST)"
 
@@ -58,7 +127,7 @@ namespace tetsPost
         /// <param name="data">json参数</param>
         public static string HttpPost(string url, object data)
         {
-          var requestData = JsonConvert.SerializeObject(data);
+            var requestData = JsonConvert.SerializeObject(data);
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "POST";
             request.ContentType = "application/json;charset=UTF-8";
@@ -165,7 +234,7 @@ namespace tetsPost
                 if (encode != null)
                     webClient.Encoding = encode;
 
-                var sendData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject( postStr));
+                var sendData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(postStr));
 
                 webClient.Headers.Add("Content-Type", "application/json;charset=UTF-8");
                 webClient.Headers.Add("ContentLength", sendData.Length.ToString(CultureInfo.InvariantCulture));
