@@ -9,7 +9,7 @@ namespace oracleTest
     public class OracleDataBse
     {
         //联接串，实例化时指定，否则从ConnectionString类的属性中取得 
-        private const string strConnectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl)));Persist Security Info=True;User ID=dbhis;Password=dbhis;";
+        private const string strConnectionString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=114.116.11.82)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=orcl)));Persist Security Info=True;User ID=dbhis;Password=dbhis;";
 
         // 连接数据源 
         private OracleConnection con;

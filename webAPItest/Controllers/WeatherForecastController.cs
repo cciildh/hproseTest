@@ -24,6 +24,7 @@ namespace webAPItest.Controllers
         }
 
         [HttpGet]
+     
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
