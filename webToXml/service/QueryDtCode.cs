@@ -4,24 +4,25 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using webAPItest.output;
+using webToXml.comm;
+using webToXml.output;
 
-namespace webAPItest.service
+namespace webToXml.service
 {
-    public  class QueryDtCode
+    public class QueryDtCode
     {
         /// <summary>
         /// 2.1.1	科室字典信息
         /// </summary>
         /// <returns></returns>
-        public static List<outDictDept.Row> QueryDictDept()
+        public static List<outDictDept> QueryDictDept()
         {
             try
             {
                 var sql = "select '0' hiscode, ORGID deptcode, ORGNAME deptname, ''parentname ,1  is_clinic, 0 is_inhosp , 0 is_emergency from dt_org where orgid='01020C' ";
                 var dt = CommRunSQL(sql);
 
-                var dictDepts = DataTableUtils.TableToListEntity<outDictDept.Row>(dt);
+                var dictDepts = DataTableUtils.TableToListEntity<outDictDept>(dt);
 
                 return dictDepts;
             }
@@ -55,6 +56,4 @@ namespace webAPItest.service
             return dt;
         }
     }
-
-
 }

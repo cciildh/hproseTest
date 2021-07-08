@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\oracleTest\oracleTest.csproj" />
   </ItemGroup>
 

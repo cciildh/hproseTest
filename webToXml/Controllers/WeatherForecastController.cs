@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace webAPItest.Controllers
+namespace webToXml.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -24,8 +24,6 @@ namespace webAPItest.Controllers
         }
 
         [HttpGet]
-        //[Consumes("application/xml")]
-        //[Produces("application/xml")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

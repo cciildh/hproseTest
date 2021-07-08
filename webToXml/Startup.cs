@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace webAPItest
+namespace webToXml
 {
     public class Startup
     {
@@ -31,10 +31,8 @@ namespace webAPItest
             {
                 opt.RespectBrowserAcceptHeader = true;
             })
-                .AddXmlSerializerFormatters();//直接会忽略dynamic/object类型的属性
-                                              //.AddXmlDataContractSerializerFormatters();//以将匿名属性式化为xml
-
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddXmlSerializerFormatters();
+                //.AddXmlSerializerFormatters()//直接会忽略dynamic/object类型的属性
+                .AddXmlDataContractSerializerFormatters();//以将匿名属性式化为xml
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
