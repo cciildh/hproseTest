@@ -18,7 +18,7 @@ namespace hproseClient
             System.Console.WriteLine("--------person对象接收---------");
             System.Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(result));
 
-            result.Addres = "湖北广水";
+            result.Addres = "湖北广水11";
             System.Console.WriteLine("--------传递person对象---------");
             cli.Invoke("setInfo", new object[] { result });
 
