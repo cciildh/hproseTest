@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://hoslinkws.cityplatform.stpass.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://hoslinkws.cityplatform.stpass.com" targetNamespace="http://hoslinkws.cityplatform.stpass.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://hoslinkws.cityplatform.stpass.com">
+      <xsd:element name="auth">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="access" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="authResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="authReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poInventoryBld">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="inventoryBldJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poInventoryBldResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poInventoryBldReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poScrap">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="scrap" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poScrapResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poScrapReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfScrap">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="selfScrap" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfScrapResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poSelfScrapReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poApplication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="application" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poApplicationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poApplicationReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poReaction">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="reactionJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poReactionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poReactionReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poTransferIn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="transferInJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poTransferInResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poTransferInReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poTransferOut">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="transferOutJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poTransferOutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poTransferOutReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poOtherIn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="otherInJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poOtherInResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poOtherInReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poOtherOut">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="otherInJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poOtherOutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poOtherOutReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfIn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="selfInJson" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfInResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poSelfInReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfOut">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="selfOutJson" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfOutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poSelfOutReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listBloodProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listBloodProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="listBloodProductReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listBloodType">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listBloodTypeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="listBloodTypeReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="newBooking">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="bookingJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="newBookingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="newBookingReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listInstitution">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listInstitutionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="listInstitutionReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelBooking">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="bookingId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelBookingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cancelBookingReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBookingById">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="bookingId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getBookingByIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getBookingByIdReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="postPmHandovers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="bloodHandover" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="postPmHandoversResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="postPmHandoversReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPmHandovers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="id" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPmHandoversResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getPmHandoversReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poOutClinic">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="outClinicJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poOutClinicResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poOutClinicReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poInStock">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="inStockJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poInStockResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poInStockReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poInventorySum">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="inventorySumJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poInventorySumResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poInventorySumReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listStation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listStationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="listStationReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="confirmPmHandovers">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="id" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="confirmPmHandoversResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="confirmPmHandoversReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRecentReturnStation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRecentReturnStationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getRecentReturnStationReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="applyReturnStation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="returnStationJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="applyReturnStationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="applyReturnStationReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelReturnStation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="returnId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelReturnStationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cancelReturnStationReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfInventorySum">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="selfinventorySumJSON" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="poSelfInventorySumResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="poSelfInventorySumReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listRecentBooking">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="listRecentBookingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="listRecentBookingReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="confirmStationOut">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="stationOutId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="confirmStationOutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="confirmStationOutReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getStationOutById">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="stationOutId" type="xsd:string" />
+            <xsd:element name="stationHospitalId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getStationOutByIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getStationOutByIdReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRecentStationOut">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="token" type="xsd:string" />
+            <xsd:element name="stationHospitalId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRecentStationOutResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getRecentStationOutReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="newBookingResponse">
+    <wsdl:part name="parameters" element="impl:newBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="poSelfInRequest">
+    <wsdl:part name="parameters" element="impl:poSelfIn" />
+  </wsdl:message>
+  <wsdl:message name="poApplicationResponse">
+    <wsdl:part name="parameters" element="impl:poApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="poInventorySumResponse">
+    <wsdl:part name="parameters" element="impl:poInventorySumResponse" />
+  </wsdl:message>
+  <wsdl:message name="poSelfOutResponse">
+    <wsdl:part name="parameters" element="impl:poSelfOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="listBloodProductRequest">
+    <wsdl:part name="parameters" element="impl:listBloodProduct" />
+  </wsdl:message>
+  <wsdl:message name="poReactionResponse">
+    <wsdl:part name="parameters" element="impl:poReactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="poInventorySumRequest">
+    <wsdl:part name="parameters" element="impl:poInventorySum" />
+  </wsdl:message>
+  <wsdl:message name="poSelfScrapResponse">
+    <wsdl:part name="parameters" element="impl:poSelfScrapResponse" />
+  </wsdl:message>
+  <wsdl:message name="poTransferOutResponse">
+    <wsdl:part name="parameters" element="impl:poTransferOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirmPmHandoversRequest">
+    <wsdl:part name="parameters" element="impl:confirmPmHandovers" />
+  </wsdl:message>
+  <wsdl:message name="poSelfOutRequest">
+    <wsdl:part name="parameters" element="impl:poSelfOut" />
+  </wsdl:message>
+  <wsdl:message name="getRecentReturnStationRequest">
+    <wsdl:part name="parameters" element="impl:getRecentReturnStation" />
+  </wsdl:message>
+  <wsdl:message name="getStationOutByIdResponse">
+    <wsdl:part name="parameters" element="impl:getStationOutByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="poSelfInventorySumResponse">
+    <wsdl:part name="parameters" element="impl:poSelfInventorySumResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirmStationOutResponse">
+    <wsdl:part name="parameters" element="impl:confirmStationOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="listInstitutionRequest">
+    <wsdl:part name="parameters" element="impl:listInstitution" />
+  </wsdl:message>
+  <wsdl:message name="applyReturnStationRequest">
+    <wsdl:part name="parameters" element="impl:applyReturnStation" />
+  </wsdl:message>
+  <wsdl:message name="confirmPmHandoversResponse">
+    <wsdl:part name="parameters" element="impl:confirmPmHandoversResponse" />
+  </wsdl:message>
+  <wsdl:message name="poInventoryBldRequest">
+    <wsdl:part name="parameters" element="impl:poInventoryBld" />
+  </wsdl:message>
+  <wsdl:message name="getBookingByIdResponse">
+    <wsdl:part name="parameters" element="impl:getBookingByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="poInventoryBldResponse">
+    <wsdl:part name="parameters" element="impl:poInventoryBldResponse" />
+  </wsdl:message>
+  <wsdl:message name="listBloodTypeRequest">
+    <wsdl:part name="parameters" element="impl:listBloodType" />
+  </wsdl:message>
+  <wsdl:message name="poInStockRequest">
+    <wsdl:part name="parameters" element="impl:poInStock" />
+  </wsdl:message>
+  <wsdl:message name="poOutClinicResponse">
+    <wsdl:part name="parameters" element="impl:poOutClinicResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelReturnStationResponse">
+    <wsdl:part name="parameters" element="impl:cancelReturnStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="poScrapRequest">
+    <wsdl:part name="parameters" element="impl:poScrap" />
+  </wsdl:message>
+  <wsdl:message name="listStationResponse">
+    <wsdl:part name="parameters" element="impl:listStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="poOtherOutResponse">
+    <wsdl:part name="parameters" element="impl:poOtherOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="poTransferOutRequest">
+    <wsdl:part name="parameters" element="impl:poTransferOut" />
+  </wsdl:message>
+  <wsdl:message name="cancelBookingResponse">
+    <wsdl:part name="parameters" element="impl:cancelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="poTransferInRequest">
+    <wsdl:part name="parameters" element="impl:poTransferIn" />
+  </wsdl:message>
+  <wsdl:message name="listStationRequest">
+    <wsdl:part name="parameters" element="impl:listStation" />
+  </wsdl:message>
+  <wsdl:message name="getPmHandoversResponse">
+    <wsdl:part name="parameters" element="impl:getPmHandoversResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBookingByIdRequest">
+    <wsdl:part name="parameters" element="impl:getBookingById" />
+  </wsdl:message>
+  <wsdl:message name="authRequest">
+    <wsdl:part name="parameters" element="impl:auth" />
+  </wsdl:message>
+  <wsdl:message name="getRecentReturnStationResponse">
+    <wsdl:part name="parameters" element="impl:getRecentReturnStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="poOtherOutRequest">
+    <wsdl:part name="parameters" element="impl:poOtherOut" />
+  </wsdl:message>
+  <wsdl:message name="newBookingRequest">
+    <wsdl:part name="parameters" element="impl:newBooking" />
+  </wsdl:message>
+  <wsdl:message name="authResponse">
+    <wsdl:part name="parameters" element="impl:authResponse" />
+  </wsdl:message>
+  <wsdl:message name="poOutClinicRequest">
+    <wsdl:part name="parameters" element="impl:poOutClinic" />
+  </wsdl:message>
+  <wsdl:message name="poOtherInRequest">
+    <wsdl:part name="parameters" element="impl:poOtherIn" />
+  </wsdl:message>
+  <wsdl:message name="cancelReturnStationRequest">
+    <wsdl:part name="parameters" element="impl:cancelReturnStation" />
+  </wsdl:message>
+  <wsdl:message name="cancelBookingRequest">
+    <wsdl:part name="parameters" element="impl:cancelBooking" />
+  </wsdl:message>
+  <wsdl:message name="poScrapResponse">
+    <wsdl:part name="parameters" element="impl:poScrapResponse" />
+  </wsdl:message>
+  <wsdl:message name="poInStockResponse">
+    <wsdl:part name="parameters" element="impl:poInStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirmStationOutRequest">
+    <wsdl:part name="parameters" element="impl:confirmStationOut" />
+  </wsdl:message>
+  <wsdl:message name="poApplicationRequest">
+    <wsdl:part name="parameters" element="impl:poApplication" />
+  </wsdl:message>
+  <wsdl:message name="poOtherInResponse">
+    <wsdl:part name="parameters" element="impl:poOtherInResponse" />
+  </wsdl:message>
+  <wsdl:message name="listInstitutionResponse">
+    <wsdl:part name="parameters" element="impl:listInstitutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="postPmHandoversRequest">
+    <wsdl:part name="parameters" element="impl:postPmHandovers" />
+  </wsdl:message>
+  <wsdl:message name="getRecentStationOutResponse">
+    <wsdl:part name="parameters" element="impl:getRecentStationOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRecentStationOutRequest">
+    <wsdl:part name="parameters" element="impl:getRecentStationOut" />
+  </wsdl:message>
+  <wsdl:message name="listRecentBookingResponse">
+    <wsdl:part name="parameters" element="impl:listRecentBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="poSelfInResponse">
+    <wsdl:part name="parameters" element="impl:poSelfInResponse" />
+  </wsdl:message>
+  <wsdl:message name="poSelfScrapRequest">
+    <wsdl:part name="parameters" element="impl:poSelfScrap" />
+  </wsdl:message>
+  <wsdl:message name="poSelfInventorySumRequest">
+    <wsdl:part name="parameters" element="impl:poSelfInventorySum" />
+  </wsdl:message>
+  <wsdl:message name="poTransferInResponse">
+    <wsdl:part name="parameters" element="impl:poTransferInResponse" />
+  </wsdl:message>
+  <wsdl:message name="listBloodProductResponse">
+    <wsdl:part name="parameters" element="impl:listBloodProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStationOutByIdRequest">
+    <wsdl:part name="parameters" element="impl:getStationOutById" />
+  </wsdl:message>
+  <wsdl:message name="listRecentBookingRequest">
+    <wsdl:part name="parameters" element="impl:listRecentBooking" />
+  </wsdl:message>
+  <wsdl:message name="postPmHandoversResponse">
+    <wsdl:part name="parameters" element="impl:postPmHandoversResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPmHandoversRequest">
+    <wsdl:part name="parameters" element="impl:getPmHandovers" />
+  </wsdl:message>
+  <wsdl:message name="applyReturnStationResponse">
+    <wsdl:part name="parameters" element="impl:applyReturnStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="poReactionRequest">
+    <wsdl:part name="parameters" element="impl:poReaction" />
+  </wsdl:message>
+  <wsdl:message name="listBloodTypeResponse">
+    <wsdl:part name="parameters" element="impl:listBloodTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Hoslink">
+    <wsdl:operation name="auth">
+      <wsdl:input name="authRequest" message="impl:authRequest" />
+      <wsdl:output name="authResponse" message="impl:authResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poInventoryBld">
+      <wsdl:input name="poInventoryBldRequest" message="impl:poInventoryBldRequest" />
+      <wsdl:output name="poInventoryBldResponse" message="impl:poInventoryBldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poScrap">
+      <wsdl:input name="poScrapRequest" message="impl:poScrapRequest" />
+      <wsdl:output name="poScrapResponse" message="impl:poScrapResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poSelfScrap">
+      <wsdl:input name="poSelfScrapRequest" message="impl:poSelfScrapRequest" />
+      <wsdl:output name="poSelfScrapResponse" message="impl:poSelfScrapResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poApplication">
+      <wsdl:input name="poApplicationRequest" message="impl:poApplicationRequest" />
+      <wsdl:output name="poApplicationResponse" message="impl:poApplicationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poReaction">
+      <wsdl:input name="poReactionRequest" message="impl:poReactionRequest" />
+      <wsdl:output name="poReactionResponse" message="impl:poReactionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poTransferIn">
+      <wsdl:input name="poTransferInRequest" message="impl:poTransferInRequest" />
+      <wsdl:output name="poTransferInResponse" message="impl:poTransferInResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poTransferOut">
+      <wsdl:input name="poTransferOutRequest" message="impl:poTransferOutRequest" />
+      <wsdl:output name="poTransferOutResponse" message="impl:poTransferOutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poOtherIn">
+      <wsdl:input name="poOtherInRequest" message="impl:poOtherInRequest" />
+      <wsdl:output name="poOtherInResponse" message="impl:poOtherInResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poOtherOut">
+      <wsdl:input name="poOtherOutRequest" message="impl:poOtherOutRequest" />
+      <wsdl:output name="poOtherOutResponse" message="impl:poOtherOutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poSelfIn">
+      <wsdl:input name="poSelfInRequest" message="impl:poSelfInRequest" />
+      <wsdl:output name="poSelfInResponse" message="impl:poSelfInResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poSelfOut">
+      <wsdl:input name="poSelfOutRequest" message="impl:poSelfOutRequest" />
+      <wsdl:output name="poSelfOutResponse" message="impl:poSelfOutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listBloodProduct">
+      <wsdl:input name="listBloodProductRequest" message="impl:listBloodProductRequest" />
+      <wsdl:output name="listBloodProductResponse" message="impl:listBloodProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listBloodType">
+      <wsdl:input name="listBloodTypeRequest" message="impl:listBloodTypeRequest" />
+      <wsdl:output name="listBloodTypeResponse" message="impl:listBloodTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="newBooking">
+      <wsdl:input name="newBookingRequest" message="impl:newBookingRequest" />
+      <wsdl:output name="newBookingResponse" message="impl:newBookingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listInstitution">
+      <wsdl:input name="listInstitutionRequest" message="impl:listInstitutionRequest" />
+      <wsdl:output name="listInstitutionResponse" message="impl:listInstitutionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelBooking">
+      <wsdl:input name="cancelBookingRequest" message="impl:cancelBookingRequest" />
+      <wsdl:output name="cancelBookingResponse" message="impl:cancelBookingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getBookingById">
+      <wsdl:input name="getBookingByIdRequest" message="impl:getBookingByIdRequest" />
+      <wsdl:output name="getBookingByIdResponse" message="impl:getBookingByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="postPmHandovers">
+      <wsdl:input name="postPmHandoversRequest" message="impl:postPmHandoversRequest" />
+      <wsdl:output name="postPmHandoversResponse" message="impl:postPmHandoversResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPmHandovers">
+      <wsdl:input name="getPmHandoversRequest" message="impl:getPmHandoversRequest" />
+      <wsdl:output name="getPmHandoversResponse" message="impl:getPmHandoversResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poOutClinic">
+      <wsdl:input name="poOutClinicRequest" message="impl:poOutClinicRequest" />
+      <wsdl:output name="poOutClinicResponse" message="impl:poOutClinicResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poInStock">
+      <wsdl:input name="poInStockRequest" message="impl:poInStockRequest" />
+      <wsdl:output name="poInStockResponse" message="impl:poInStockResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poInventorySum">
+      <wsdl:input name="poInventorySumRequest" message="impl:poInventorySumRequest" />
+      <wsdl:output name="poInventorySumResponse" message="impl:poInventorySumResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listStation">
+      <wsdl:input name="listStationRequest" message="impl:listStationRequest" />
+      <wsdl:output name="listStationResponse" message="impl:listStationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmPmHandovers">
+      <wsdl:input name="confirmPmHandoversRequest" message="impl:confirmPmHandoversRequest" />
+      <wsdl:output name="confirmPmHandoversResponse" message="impl:confirmPmHandoversResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecentReturnStation">
+      <wsdl:input name="getRecentReturnStationRequest" message="impl:getRecentReturnStationRequest" />
+      <wsdl:output name="getRecentReturnStationResponse" message="impl:getRecentReturnStationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="applyReturnStation">
+      <wsdl:input name="applyReturnStationRequest" message="impl:applyReturnStationRequest" />
+      <wsdl:output name="applyReturnStationResponse" message="impl:applyReturnStationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelReturnStation">
+      <wsdl:input name="cancelReturnStationRequest" message="impl:cancelReturnStationRequest" />
+      <wsdl:output name="cancelReturnStationResponse" message="impl:cancelReturnStationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="poSelfInventorySum">
+      <wsdl:input name="poSelfInventorySumRequest" message="impl:poSelfInventorySumRequest" />
+      <wsdl:output name="poSelfInventorySumResponse" message="impl:poSelfInventorySumResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listRecentBooking">
+      <wsdl:input name="listRecentBookingRequest" message="impl:listRecentBookingRequest" />
+      <wsdl:output name="listRecentBookingResponse" message="impl:listRecentBookingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmStationOut">
+      <wsdl:input name="confirmStationOutRequest" message="impl:confirmStationOutRequest" />
+      <wsdl:output name="confirmStationOutResponse" message="impl:confirmStationOutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getStationOutById">
+      <wsdl:input name="getStationOutByIdRequest" message="impl:getStationOutByIdRequest" />
+      <wsdl:output name="getStationOutByIdResponse" message="impl:getStationOutByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecentStationOut">
+      <wsdl:input name="getRecentStationOutRequest" message="impl:getRecentStationOutRequest" />
+      <wsdl:output name="getRecentStationOutResponse" message="impl:getRecentStationOutResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HoslinkSoapBinding" type="impl:Hoslink">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="auth">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="authRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="authResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poInventoryBld">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poInventoryBldRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poInventoryBldResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poScrap">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poScrapRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poScrapResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poSelfScrap">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poSelfScrapRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poSelfScrapResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poApplication">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poApplicationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poApplicationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poReaction">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poReactionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poReactionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poTransferIn">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poTransferInRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poTransferInResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poTransferOut">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poTransferOutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poTransferOutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poOtherIn">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poOtherInRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poOtherInResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poOtherOut">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poOtherOutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poOtherOutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poSelfIn">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poSelfInRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poSelfInResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poSelfOut">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poSelfOutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poSelfOutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listBloodProduct">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="listBloodProductRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listBloodProductResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listBloodType">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="listBloodTypeRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listBloodTypeResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newBooking">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="newBookingRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="newBookingResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listInstitution">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="listInstitutionRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listInstitutionResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelBooking">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cancelBookingRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelBookingResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookingById">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getBookingByIdRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBookingByIdResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postPmHandovers">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="postPmHandoversRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="postPmHandoversResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPmHandovers">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getPmHandoversRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPmHandoversResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poOutClinic">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poOutClinicRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poOutClinicResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poInStock">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poInStockRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poInStockResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poInventorySum">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poInventorySumRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poInventorySumResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listStation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="listStationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listStationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmPmHandovers">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="confirmPmHandoversRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="confirmPmHandoversResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentReturnStation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getRecentReturnStationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRecentReturnStationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="applyReturnStation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="applyReturnStationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="applyReturnStationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelReturnStation">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="cancelReturnStationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelReturnStationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="poSelfInventorySum">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="poSelfInventorySumRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="poSelfInventorySumResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listRecentBooking">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="listRecentBookingRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="listRecentBookingResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmStationOut">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="confirmStationOutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="confirmStationOutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStationOutById">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getStationOutByIdRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStationOutByIdResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecentStationOut">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getRecentStationOutRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRecentStationOutResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HoslinkService">
+    <wsdl:port name="Hoslink" binding="impl:HoslinkSoapBinding">
+      <wsdlsoap:address location="http://10.186.8.98:8023/hoslinkws/services/Hoslink" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
